@@ -33,6 +33,8 @@
         <property name="hibernate.dbcp.maxIdle">10</property>
         <property name="hibernate.dbcp.minIdle">5</property>
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
+        <property name="hibernate.globally_quoted_identifiers">true</property>
+        <property name="hibernate.jdbc.batch_size">20</property>
 
         <mapping class="entity.Album" />
         <mapping class="entity.Artist" />

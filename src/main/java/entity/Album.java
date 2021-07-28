@@ -35,6 +35,9 @@ public class Album {
     )
     private List<Artist> artists = new ArrayList<>();
 
+    @ManyToMany(mappedBy = "albums")
+    private List<Order> orders = new ArrayList<>();
+
     public Album() {
     }
 

@@ -35,6 +35,31 @@ public class TrackDao {
         return track;
     }
 
+    public void butchCreate(int quantity) {
+        Transaction transaction = null;
+        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+            transaction = session.beginTransaction();
+
+            for (int i = 0; i < quantity; i++) {
+                Track t = new Track("Track #" + (i + 1));
+                session.save(t);
+
+                if ( i % 20 == 0 ) {
+                    session.flush();
+                    session.clear();
+                }
+            }
+
+            transaction.commit();
+
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        }
+    }
+
     public void create(Track track) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

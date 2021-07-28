@@ -31,8 +31,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, @NonNull String fullName, List<Order> orders) {
-        this.id = id;
+    public Customer(@NonNull String fullName) {
+        this.fullName = fullName;
+    }
+
+    public Customer(@NonNull String fullName, List<Order> orders) {
         this.fullName = fullName;
         this.orders = orders;
     }

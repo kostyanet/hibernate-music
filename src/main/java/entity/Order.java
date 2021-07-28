@@ -26,17 +26,24 @@ public class Order {
     @Column(name = "customer_id")
     private int customerId;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "order_album",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "album_id")
+    )
     private List<Album> albums = new ArrayList<>();
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "order_track",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "track_id")
+    )
     private List<Track> tracks = new ArrayList<>();
 
     public Order() {
     }
 
-    public Order(int id, @NonNull int customerId, List<Album> albums, List<Track> tracks) {
-        this.id = id;
+    public Order(@NonNull int customerId, List<Album> albums, List<Track> tracks) {
         this.customerId = customerId;
         this.albums = albums;
         this.tracks = tracks;

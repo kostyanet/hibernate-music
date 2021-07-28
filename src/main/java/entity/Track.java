@@ -5,6 +5,8 @@ import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -19,6 +21,9 @@ public class Track {
     @NonNull
     @Column(name = "title")
     private String title;
+
+    @ManyToMany(mappedBy = "tracks")
+    private List<Order> orders = new ArrayList<>();
 
     public Track() {
     }
