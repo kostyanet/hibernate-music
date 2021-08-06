@@ -22,7 +22,7 @@ public class UserService {
     }
 
     public void createTracks() {
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 10; i++) {
             trackDao.create(new Track("Track #" + (i + 1)));
         }
     }

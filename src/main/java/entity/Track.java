@@ -31,4 +31,13 @@ public class Track {
     public Track(@NonNull String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "Track{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", orders=" + orders +
+                '}';
+    }
 }
