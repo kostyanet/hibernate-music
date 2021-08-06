@@ -82,6 +82,8 @@ public class TrackDao {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
             String hql = "FROM Track";
+            // todo work on it
+//            String hql = "SELECT Track.id, Track.title, t.orders FROM Track t LEFT OUTER JOIN t.orders";
             Query<Track> query = session.createQuery(hql);
             results = query.getResultList();
             transaction.commit();

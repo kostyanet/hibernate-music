@@ -45,7 +45,6 @@ public class Customer {
         return "Customer{" +
                 "id=" + id +
                 ", fullName='" + fullName + '\'' +
-                ", orders=" + orders +
                 '}';
     }
 }

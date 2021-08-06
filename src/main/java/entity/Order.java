@@ -48,4 +48,14 @@ public class Order {
         this.albums = albums;
         this.tracks = tracks;
     }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", customerId=" + customerId +
+                ", albums=" + albums +
+                ", tracks=" + tracks +
+                '}';
+    }
 }
