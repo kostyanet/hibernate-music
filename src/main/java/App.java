@@ -1,7 +1,6 @@
 import dao.*;
 import entity.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -104,6 +103,6 @@ public class App {
     }
 
     public void insertTrackButch() {
-        trackDao.butchCreate((int) 2e5);
+//        trackDao.butchCreate((int) 2e5);
     }
 }
